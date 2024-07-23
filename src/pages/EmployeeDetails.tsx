@@ -1,12 +1,16 @@
 import React from 'react'
-import { useLocation, useNavigate, useParams } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { EmployeeType } from '../types';
 import './EmployeeDetails.css'
+import { useSelector } from 'react-redux';
+import { RootState } from '../state/Store';
 
 function EmployeeDetails() {
+
+    const employeeData = useSelector((state: RootState) => state.employee.value);
     const navigate = useNavigate()
- const {state} = useLocation()
- const employeeData:EmployeeType = state
+//  const {state} = useLocation()
+//  const employeeData:EmployeeType = state
  console.log(employeeData);
   return (
     <div className="employee-details">

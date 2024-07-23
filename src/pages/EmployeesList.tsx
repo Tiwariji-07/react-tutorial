@@ -28,8 +28,6 @@ function EmployeesList() {
         style={{ display: "flex", flexWrap: "wrap", gap: "24px"}}
       >
         {employees.map((employee, index) => {
-          // return <p>{employee.firstname}</p>;
-          console.log(employee);
           return <div style={{flex:"1"}}>
           <EmployeeCard {...employee} key={index} />
           </div>

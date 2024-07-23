@@ -3,12 +3,17 @@ import "./EmployeeCard.css";
 
 import { EmployeeType } from "../../types";
 import Person from '../../assets/person.jpg'
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { selectUser } from "../../state/EmployeeSlice";
 
 function EmployeeCard(employee:EmployeeType) {
+
+    const dispatch = useDispatch()
     const navigate = useNavigate()
     const handleClick = () => {
         navigate("/details",{ state: employee })
+        dispatch(selectUser(employee))
     }
   return (
     <>
